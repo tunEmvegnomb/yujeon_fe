@@ -125,6 +125,37 @@ body, h1, p{
     overflow: hidden;
     animation: fadeinrightconnerbottom 1.5s;
 }
+.main_img_list div:nth-child(5){
+    display: none;
+    top: -300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* color: white; */
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    font-weight: bold;
+}
+.main_img_list div:nth-child(6){
+    display: none;
+    top: 490px;
+    padding: 10px 0px;
+    background: #000;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* color: white; */
+    z-index: 10;
+    width: 100%;
+    /* height: 100%; */
+    border-radius: 20px;
+    overflow: hidden;
+    font-weight: bold;
+}
 
 .main_img_list div img{
     width: 100%;
@@ -347,5 +378,14 @@ body, h1, p{
     }
     .menu_icon {
         width: 220px;
+    }
+    .main_img_list div:nth-child(5){
+        display: flex;
+        font-size: 15px;
+    }
+    .main_img_list div:nth-child(6){
+        cursor: pointer;
+        display: flex;
+        font-size: 30px;
     }
 }
