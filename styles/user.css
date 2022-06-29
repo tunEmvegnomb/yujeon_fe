@@ -31,7 +31,7 @@ body, h1, p{
 }
 .menu_icon{
     /* font-weight: bold; */
-    font-size: 16px;
+    font-size: 0.9em;
     position: absolute;
     right: 20px;
     /* top: 0; */
@@ -320,5 +320,32 @@ body, h1, p{
     }
     to {
         transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    .main_text{
+        display: none;
+    }
+    .main_img{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main_img div{
+        display: none;
+    }
+    .main_img div:nth-child(1){
+        display: block;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .menu_icon div:nth-child(1){
+        display: none;
+    }
+    .menu_icon {
+        width: 220px;
     }
 }
