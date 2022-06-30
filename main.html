@@ -1,1 +1,179 @@
 <!-- main html -->
+<!-- main html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/api.js"></script>
+    <script src="https://kit.fontawesome.com/0e01622099.js" crossorigin="anonymous"></script>
+    <title>메인페이지 | 가제</title>
+</head>
+
+<body>
+    <div class="main_bg">
+        <!-- 네비게이션바 -->
+        <nav class="nav">
+            <div class="logo"><i class="fa-solid fa-palette"></i><span>유전</span></div>
+            <div class="menu_icon">
+                <div>
+                    <span>황리</span>와 아이들
+                </div>
+                <div>
+                    <i style="font-size:25px; color:#ff0000;" class="fa-solid fa-crown"></i>
+                </div>
+                <div>
+                    <i style="font-size:25px;" class="fa-solid fa-comment-dots"></i>
+                </div>
+                <div onclick="logout()">
+                    <i style="font-size:25px; color:#FFC4C4" class="fa-solid fa-user"></i>
+                </div>
+            </div>
+        </nav>
+        <!--  -->
+
+
+        <div class="main_box">
+            <div class="paint">
+
+                <div class="paint_list">
+                    <figure>
+                        <div>
+                            <img src="https://m.picturemall.co.kr/web/product/big/202011/954895d4a7b72f170d2d612d5b23f3ae.jpg"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>1번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-oil-painting-training-class-painting-poster-background-material-image_152859.jpg"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>2번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeW27r-r5h72klWt8psvY2JrBDRzraaD-Fiw&usqp=CAU"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>3번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://image.idus.com/image/files/68260a69ca0744098311e6192e717a10_512.jpg"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>4번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://cdn.imweb.me/thumbnail/20201129/e06198e6ebda6.jpg" alt="" srcset="">
+                        </div>
+                        <figcaption>5번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://i.pinimg.com/originals/bc/56/55/bc5655452493d909599ef76c3888b4da.jpg"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>6번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/4qwQ/image/FOO-hJbzaBk97hiv5tcPdDhGHiI.png"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>7번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://image.made-in-china.com/155f0j00YsiaNAWRZMpc/Factory-Direct-Wholesale-100-Handmade-Oil-Painting-on-Canvas-Still-Life-Flower.jpg"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>8번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://m.picturemall.co.kr/web/product/big/202011/954895d4a7b72f170d2d612d5b23f3ae.jpg"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>1번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-oil-painting-training-class-painting-poster-background-material-image_152859.jpg"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>2번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeW27r-r5h72klWt8psvY2JrBDRzraaD-Fiw&usqp=CAU"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>3번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://image.idus.com/image/files/68260a69ca0744098311e6192e717a10_512.jpg"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>4번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://cdn.imweb.me/thumbnail/20201129/e06198e6ebda6.jpg" alt="" srcset="">
+                        </div>
+                        <figcaption>5번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://i.pinimg.com/originals/bc/56/55/bc5655452493d909599ef76c3888b4da.jpg"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>6번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/4qwQ/image/FOO-hJbzaBk97hiv5tcPdDhGHiI.png"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>7번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://image.made-in-china.com/155f0j00YsiaNAWRZMpc/Factory-Direct-Wholesale-100-Handmade-Oil-Painting-on-Canvas-Still-Life-Flower.jpg"
+                                alt="" srcset="">
+                        </div>
+                        <figcaption>8번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://i.pinimg.com/736x/3d/13/c7/3d13c7511552e65dfd8002ba417959f1.jpg" alt=""
+                                srcset="">
+                        </div>
+                        <figcaption>8번</figcaption>
+                    </figure>
+                    <figure>
+                        <div>
+                            <img src="https://i.pinimg.com/736x/04/57/94/045794816ce52f26d0d0014955612924.jpg" alt=""
+                                srcset="">
+                        </div>
+                        <figcaption>8번</figcaption>
+                    </figure>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+</body>
+
+</html>

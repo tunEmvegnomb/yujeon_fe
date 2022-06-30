@@ -7,14 +7,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/join_style.css">
+    <link rel="stylesheet" href="./styles/user.css">
+    <script src="./scripts/user.js"></script>
     <script src="https://kit.fontawesome.com/0e01622099.js" crossorigin="anonymous"></script>
     <title>회원가입 | 가제</title>
 </head>
 
 <body>
     <div class="main_bg">
-
         <!-- 로그인창 모달 -->
         <div class="login_modal" id="login_modal">
             <div class="login_modal_box">
@@ -24,10 +24,10 @@
                 <div class="modal_title"><span>유전</span>에 오신것을 환영합니다.</div>
                 <div class="modal_login_box">
                     아이디
-                    <input type="text" placeholder="아이디">
+                    <input type="text" id="username" placeholder="아이디">
                     비밀번호
-                    <input type="password" placeholder="비밀번호">
-                    <div class="modal_login_button">로그인</div>
+                    <input type="password" id="password" placeholder="비밀번호">
+                    <div onclick="login_api()" class="modal_login_button">로그인</div>
                     <div>비밀번호를 잊으셨나요?</div>
                     <div style="text-align: center; margin-top:10px; font-size:16px; font-weight:bold;">또는</div>
                     <div class="modal_kakao_login_button">카카오톡으로 계속하기</div>
@@ -46,16 +46,17 @@
                 <div class="modal_title"><span>유전</span>에 오신것을 환영합니다.</div>
                 <div class="modal_login_box">
                     아이디
-                    <input type="text" placeholder="아이디">
+                    <input id="join_username" name="username" type="text" placeholder="아이디">
                     이메일
-                    <input type="email" placeholder="아이디">
+                    <input id="email" name="email" type="email" placeholder="이메일">
                     비밀번호
-                    <input type="password" placeholder="비밀번호">
+                    <input id="join_password" name="password" type="password" placeholder="비밀번호">
                     비밀번호 확인
-                    <input type="password" placeholder="비밀번호 확인">
+                    <input id="join_password2" name="password2" type="password" placeholder="비밀번호 확인">
                     닉네임
-                    <input type="text" placeholder="아이디">
-                    <div class="modal_login_button">회원가입</div>
+                    <input id="nickname" name="nickname" type="text" placeholder="닉네임">
+
+                    <div onclick="signup()" class="modal_login_button">회원가입</div>
                     <div>비밀번호를 잊으셨나요?</div>
                     <div style="text-align: center; margin-top:10px; font-size:16px; font-weight:bold;">또는</div>
                     <div class="modal_kakao_login_button">카카오톡으로 계속하기</div>
@@ -86,7 +87,6 @@
         <!-- 이미지 -->
         <div class="main_box">
             <div class="main_img">
-
                 <div class="main_img_list">
                     <div>
                         <img src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/1nq4/image/1CtMVnoJflIHvfqy5V0tfmn7jdY.jpg"
@@ -107,9 +107,9 @@
                         <img src="data:image/jpeg;base64,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"
                             alt="">
                     </div>
-
+                    <div>유저들간의 유화를 거래하여, 자신만의 컬렉션 유화를 완성하세요. 희귀성이 있는 유화는 전시를 통해서 값어치를 올릴수 있습니다.</div>
+                    <div onclick="login_button_click()">로그인 하기</div>
                 </div>
-
             </div>
             <div class="main_text">
                 <div>유화 컬렉션</div>
@@ -118,8 +118,9 @@
             </div>
         </div>
         <!--  -->
-        <div>
+    </div>
             <script src="./scripts/scripts.js"></script>
+            <script src="./scripts/api.js"></script>
 </body>
 
 </html>
