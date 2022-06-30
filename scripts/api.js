@@ -133,15 +133,23 @@ async function signup() {
 async function image_upload() {
 
     const formdata = info_submit();
+
+    // const data = {
+    //     title : "타이틀 입니다!",
+    //     desc : "설명 입니다!",
+    //     image : formdata.image,
+    //     cost : 10000
+    // }
     
     const response = await fetch(BACK_URL + "post/upload/", {
         method: "POST",
         headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            // Authorization: "Bearer " + localStorage.getItem("access")
+            // Accept: "multipart/form-data",
+            // "Content-Type": "multipart/form-data",
+            Authorization: "Bearer " + localStorage.getItem("yujeon_access_token")
         },
         //from data
+        //formdata
         body: formdata
     });
 
