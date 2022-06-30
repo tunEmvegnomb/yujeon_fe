@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/user.css">
+    <script src="./scripts/user.js"></script>
     <script src="https://kit.fontawesome.com/0e01622099.js" crossorigin="anonymous"></script>
     <title>회원가입 | 가제</title>
 </head>
@@ -23,10 +24,10 @@
                 <div class="modal_title"><span>유전</span>에 오신것을 환영합니다.</div>
                 <div class="modal_login_box">
                     아이디
-                    <input type="text" placeholder="아이디">
+                    <input type="text" id="username" placeholder="아이디">
                     비밀번호
-                    <input type="password" placeholder="비밀번호">
-                    <div class="modal_login_button">로그인</div>
+                    <input type="password" id="password" placeholder="비밀번호">
+                    <div onclick="login_api()" class="modal_login_button">로그인</div>
                     <div>비밀번호를 잊으셨나요?</div>
                     <div style="text-align: center; margin-top:10px; font-size:16px; font-weight:bold;">또는</div>
                     <div class="modal_kakao_login_button">카카오톡으로 계속하기</div>
@@ -45,16 +46,17 @@
                 <div class="modal_title"><span>유전</span>에 오신것을 환영합니다.</div>
                 <div class="modal_login_box">
                     아이디
-                    <input type="text" placeholder="아이디">
+                    <input id="join_username" name="username" type="text" placeholder="아이디">
                     이메일
-                    <input type="email" placeholder="아이디">
+                    <input id="email" name="email" type="email" placeholder="이메일">
                     비밀번호
-                    <input type="password" placeholder="비밀번호">
+                    <input id="join_password" name="password" type="password" placeholder="비밀번호">
                     비밀번호 확인
-                    <input type="password" placeholder="비밀번호 확인">
+                    <input id="join_password2" name="password2" type="password" placeholder="비밀번호 확인">
                     닉네임
-                    <input type="text" placeholder="아이디">
-                    <div class="modal_login_button">회원가입</div>
+                    <input id="nickname" name="nickname" type="text" placeholder="닉네임">
+
+                    <div onclick="signup()" class="modal_login_button">회원가입</div>
                     <div>비밀번호를 잊으셨나요?</div>
                     <div style="text-align: center; margin-top:10px; font-size:16px; font-weight:bold;">또는</div>
                     <div class="modal_kakao_login_button">카카오톡으로 계속하기</div>
@@ -118,6 +120,7 @@
         <!--  -->
     </div>
             <script src="./scripts/scripts.js"></script>
+            <script src="./scripts/api.js"></script>
 </body>
 
 </html>

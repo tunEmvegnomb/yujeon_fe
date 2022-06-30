@@ -1,5 +1,6 @@
 body, h1, p{
     margin: 0;
+    overflow: hidden;
 }
 .main_bg{
     width: 100%;
