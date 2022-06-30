@@ -23,10 +23,14 @@ async function login_api() {
     const response_json = await response.json();
 
     const accessToken = response_json.access;
+    const refreshToken = response_json.refresh;
+
+    // document.querySelector("#access-token").value = accessToken;
+    // document.querySelector("#refresh-token").value = refreshToken;
 
     if (response.status === 200) {
-        localStorage.setItem("access", response_json.access);
-        localStorage.setItem("refresh", response_json.refresh);
+        localStorage.setItem("yujeon_access_token", response_json.access);
+        localStorage.setItem("yujeon_refresh_token", response_json.refresh);
 
 
         const base64Url = accessToken.split('.')[1];
@@ -38,12 +42,6 @@ async function login_api() {
         // document.querySelector("#payload").value = jsonPayload;
 
         localStorage.setItem("payload", jsonPayload);
-
-        const pay = localStorage.getItem("payload")
-
-        const user_id = pay.split(",")[4].split(":")[1]
-
-        document.getElementById("login_modal").style.display = "none";
 
         window.location.reload();
 
@@ -57,8 +55,8 @@ async function login_api() {
 
 function logout() {
 
-    localStorage.removeItem("access");
-    localStorage.removeItem("refresh");
+    localStorage.removeItem("yujeon_access_token");
+    localStorage.removeItem("yujeon_refresh_token");
     localStorage.removeItem("payload");
 
     window.location.href = "./user.html";
@@ -125,5 +123,10 @@ async function signup() {
 
 }
 
-// test_api()
+// window.onload = ()=>{
+//     const payload = JSON.parse(localStorage.getItem("payload"));
+
+//     console.log(payload.nickname)
+// }
+
 
