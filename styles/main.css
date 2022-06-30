@@ -75,3 +75,69 @@ body, h1, p{
     object-fit: cover;
     border-radius: 20px;
 }
+.upload_modal{
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+}
+.upload_modal_box{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upload_btn{
+    width: 80px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff0000;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+}
+.upload_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+.img_upload_submit{
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #0051ff;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+}
+.img_upload_cancel{
+    text-align: center;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+}

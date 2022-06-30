@@ -31,11 +31,26 @@
                 <div onclick="logout()">
                     <i style="font-size:25px; color:#FFC4C4" class="fa-solid fa-user"></i>
                 </div>
+                <div onclick="img_upload_button()">
+                    <i style="font-size:25px;" class="fa-solid fa-cloud-arrow-up"></i>
+                </div>
             </div>
         </nav>
         <!--  -->
 
+        <!-- 업로드 모달 창 -->
+       <div class="upload_modal" id="upload_modal_box">
+            <div class="upload_modal_box">
+                <input type="file" id="upload_file" accept="image/*" hidden>
+                <button id="upload_btn" class="upload_btn" onclick="img_upload()">업로드</button>
+                <img src="" class="upload_img" id="upload_img" alt="">
+                <button class="img_upload_submit" id="img_upload_submit"><i class="fa-solid fa-check"></i></button>
+                <button onclick="img_upload_cancel()" class="img_upload_cancel" id="img_upload_cancel"><i class="fa-solid fa-ban"></i></button>
+            </div>
+       </div>
 
+
+        <!-- 메인 이미지 리스트  -->
         <div class="main_box">
             <div class="paint">
 
@@ -171,7 +186,6 @@
             </div>
 
         </div>
-
 
         <script src="./scripts/main.js"></script>
 
