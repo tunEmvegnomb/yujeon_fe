@@ -130,3 +130,31 @@ async function signup() {
 // }
 
 
+async function image_upload() {
+
+    const formdata = info_submit();
+    
+    const response = await fetch(BACK_URL + "post/upload/", {
+        method: "POST",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            // Authorization: "Bearer " + localStorage.getItem("access")
+        },
+        //from data
+        body: formdata
+    });
+
+    const response_json = await response.json();
+
+    if (response.status === 200) {
+        alert("업로드 성공")
+        // window.location.reload();
+    }
+
+    else if (response.status === 400) {
+        alert("업로드 실패")
+        // window.location.reload();
+    }
+    
+}

@@ -84,6 +84,7 @@ body, h1, p{
     justify-content: center;
     align-items: center;
     background-color: rgba(0,0,0,0.5);
+    flex-direction: column;
 }
 .upload_modal_box{
     width: 400px;
@@ -95,6 +96,7 @@ body, h1, p{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .upload_btn{
     width: 80px;
@@ -140,4 +142,87 @@ body, h1, p{
     font-size: 15px;
     cursor: pointer;
     border: none;
+}
+.info_input_box{
+    position: relative;
+    margin-top: 20px;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeinleft 0.5s;
+    display: none;
+}
+.info_input_box input{
+    width: 95%;
+    border-bottom: dashed 1px #000;
+    outline: none;
+    font-size: 12px;
+    /* font-weight: bold; */
+    padding: 10px;
+    /* border-radius: 20px; */
+}
+.info_input_box input:nth-child(3){
+    border: none;
+    border-top: dashed 1px #000;
+    color: red;
+    font-weight: bold;
+}
+.info_input_box textarea{
+    width: 95%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    /* font-weight: bold; */
+    padding: 10px;
+    resize: none;
+}
+.info_input_box button{
+    position: absolute;
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    background-color: #0051ff;
+    color: white;
+    right: 10px;
+    bottom: 10px;
+}
+.not_img_upload{
+    position: relative;
+    margin-bottom: 20px;
+    width: 400px;
+    height: 30px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: fadeinleft 0.5s;
+    display: none;
+    color: red;
+    font-weight: bold;
+}
+
+@keyframes fadeinleft {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
 }
