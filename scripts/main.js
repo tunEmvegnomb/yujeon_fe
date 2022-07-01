@@ -1,7 +1,6 @@
 function payload_dat_get() {
   const payload = JSON.parse(localStorage.getItem("payload"));
   const nickname = payload.nickname;
-  console.log(nickname);
   html = `${nickname}님 환영합니다.`;
   document.getElementById("welcome_user").innerHTML = html;
 }
@@ -74,23 +73,24 @@ function info_submit() {
 
   return formdata
 
-  // const formData = new FormData();
-  // formData.append("title", title);
-  // formData.append("desc", desc);
-  // formData.append("cost", cost);
-  // formData.append("image", image);
-  // console.log(formData)
+}
+function user_hover() {
+  document.getElementById("user_info").onmouseleave = function () {
+    let user_menu = document.getElementById("user_menu")
+    user_menu.onmouseleave = () => {
+      user_menu.style.display = "none"
+    }
+  }
 
-  // img_upload_cancel();
-
-  // console.log(title, desc, cost, image)
-
-  // const formData = new FormData();
-  // formData.append("title", title);
-  // formData.append("desc", desc);
-  // formData.append("cost", cost);
-  // formData.append("image", image);
+  document.getElementById("user_info").onmouseover = () => {
+    document.getElementById("user_menu").style.display = "flex";
+  }
 
 }
 
-payload_data_get();
+function detail_modal_close() {
+  document.getElementById("detail_modal").style.display = "none";
+}
+
+user_hover()
+payload_dat_get();

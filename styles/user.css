@@ -128,16 +128,15 @@ body, h1, p{
 }
 .main_img_list div:nth-child(5){
     display: none;
-    top: -300px;
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* color: white; */
-    z-index: 10;
-    width: 100%;
-    height: 100%;
+    color: white;
+    z-index: 5;
     border-radius: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
+    padding: 20px;
+    height: 100%;
     font-weight: bold;
 }
 .main_img_list div:nth-child(6){
@@ -246,7 +245,7 @@ body, h1, p{
     height: 65%;
     background-color: white;
     border-radius: 30px;
-    overflow: hidden;
+    overflow: scroll;
     animation: scale 0.5s;
 }
 .login_modal_box_close{
@@ -374,6 +373,10 @@ body, h1, p{
 
 }
 @media screen and (max-width: 600px) {
+    .main_img_list div:nth-child(1){
+        width: 100%;
+        height: 400px;
+    }
     .menu_icon div:nth-child(1){
         display: none;
     }
@@ -382,11 +385,25 @@ body, h1, p{
     }
     .main_img_list div:nth-child(5){
         display: flex;
-        font-size: 15px;
+        font-size: 20px;
+        top: -100px;
     }
     .main_img_list div:nth-child(6){
         cursor: pointer;
         display: flex;
-        font-size: 30px;
+        font-size: 15px;
+        /* height: 30px; */
+        /* width: 100px; */
+        top: 430px;
+        
+    }
+    .nav{
+        width: 91%;
+    }
+    .modal_title{
+        display: none;
+    }
+    .logo_icon{
+        display: none;
     }
 }

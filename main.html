@@ -28,8 +28,13 @@
                 <div>
                     <i style="font-size:25px;" class="fa-solid fa-comment-dots"></i>
                 </div>
-                <div onclick="logout()">
-                    <i style="font-size:25px; color:#FFC4C4" class="fa-solid fa-user"></i>
+                <div class="user_info">
+                    <i style="font-size:25px; color:#FFC4C4" id="user_info" class="fa-solid fa-user"></i>
+                    <div id="user_menu" class="user_menu">
+                        <div>1000P</div>
+                        <div>컬렉션</div>
+                        <div onclick="logout()">로그아웃</div>
+                    </div>
                 </div>
 
                 <div onclick="img_upload_button()">
@@ -40,7 +45,7 @@
         <!--  -->
 
         <!-- 업로드 모달 창 -->
-       <div class="upload_modal" id="upload_modal_box">
+        <div class="upload_modal" id="upload_modal_box">
             <div id="not_img_upload" class="not_img_upload">
                 이미지를 선택해 주세요!
             </div>
@@ -48,8 +53,10 @@
                 <input type="file" id="upload_file" hidden>
                 <button id="upload_btn" class="upload_btn" onclick="img_upload()">업로드</button>
                 <img src="" class="upload_img" id="upload_img" alt="">
-                <button onclick="img_upload_submit()" class="img_upload_submit" id="img_upload_submit"><i class="fa-solid fa-check"></i></button>
-                <button onclick="img_upload_cancel()" class="img_upload_cancel" id="img_upload_cancel"><i class="fa-solid fa-ban"></i></button>
+                <button onclick="img_upload_submit()" class="img_upload_submit" id="img_upload_submit"><i
+                        class="fa-solid fa-check"></i></button>
+                <button onclick="img_upload_cancel()" class="img_upload_cancel" id="img_upload_cancel"><i
+                        class="fa-solid fa-ban"></i></button>
             </div>
             <div id="info_input_box" class="info_input_box">
                 <input id="info_title" placeholder="제목">
@@ -57,141 +64,45 @@
                 <input id="info_cost" placeholder="가격">
                 <button onclick="image_upload()">전송</button>
             </div>
-       </div>
+        </div>
+
+        <!-- 상세 페이지 모달 -->
+        <div class="detail_modal" id="detail_modal">
+
+            <div class="detail_modal_box">
+                <div class="detail_modal_close" onclick="detail_modal_close()"><i class="fa-solid fa-circle-xmark"></i>
+                </div>
+
+                <div class="detail_img">
+                    <img src="https://m.picturemall.co.kr/web/product/big/202011/954895d4a7b72f170d2d612d5b23f3ae.jpg"
+                        alt="" srcset="">
+                </div>
+                <div class="detail_info">
+                    <div class="detail_artist">Artist<span>황영상</span></div>
+                    <div class="detail_desc">어렸을적 함께 떠난 당신과 추억하여, 남긴 그림...님은 갔지만 저는 이미 코딩에 빠져서 헤어 나올수가 없습니다. 전 외롭지 않습니다.
+                        ㅋㅋㅋㅋ</div>
+                    <div class="detail_bottom">
+                        <div class="detail_buy">
+                            100포인트 바로 구매!
+                        </div>
+                        <div class="detail_like">
+                            <i class="fa-solid fa-heart"></i>
+                            70
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--  -->
 
 
         <!-- 메인 이미지 리스트  -->
         <div class="main_box">
             <div class="paint">
 
-                <div class="paint_list">
-                    <figure>
-                        <div>
-                            <img src="https://m.picturemall.co.kr/web/product/big/202011/954895d4a7b72f170d2d612d5b23f3ae.jpg"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>1번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-oil-painting-training-class-painting-poster-background-material-image_152859.jpg"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>2번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeW27r-r5h72klWt8psvY2JrBDRzraaD-Fiw&usqp=CAU"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>3번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://image.idus.com/image/files/68260a69ca0744098311e6192e717a10_512.jpg"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>4번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://cdn.imweb.me/thumbnail/20201129/e06198e6ebda6.jpg" alt="" srcset="">
-                        </div>
-                        <figcaption>5번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://i.pinimg.com/originals/bc/56/55/bc5655452493d909599ef76c3888b4da.jpg"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>6번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/4qwQ/image/FOO-hJbzaBk97hiv5tcPdDhGHiI.png"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>7번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://image.made-in-china.com/155f0j00YsiaNAWRZMpc/Factory-Direct-Wholesale-100-Handmade-Oil-Painting-on-Canvas-Still-Life-Flower.jpg"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>8번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://m.picturemall.co.kr/web/product/big/202011/954895d4a7b72f170d2d612d5b23f3ae.jpg"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>1번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-oil-painting-training-class-painting-poster-background-material-image_152859.jpg"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>2번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeW27r-r5h72klWt8psvY2JrBDRzraaD-Fiw&usqp=CAU"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>3번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://image.idus.com/image/files/68260a69ca0744098311e6192e717a10_512.jpg"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>4번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://cdn.imweb.me/thumbnail/20201129/e06198e6ebda6.jpg" alt="" srcset="">
-                        </div>
-                        <figcaption>5번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://i.pinimg.com/originals/bc/56/55/bc5655452493d909599ef76c3888b4da.jpg"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>6번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/4qwQ/image/FOO-hJbzaBk97hiv5tcPdDhGHiI.png"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>7번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://image.made-in-china.com/155f0j00YsiaNAWRZMpc/Factory-Direct-Wholesale-100-Handmade-Oil-Painting-on-Canvas-Still-Life-Flower.jpg"
-                                alt="" srcset="">
-                        </div>
-                        <figcaption>8번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://i.pinimg.com/736x/3d/13/c7/3d13c7511552e65dfd8002ba417959f1.jpg" alt=""
-                                srcset="">
-                        </div>
-                        <figcaption>8번</figcaption>
-                    </figure>
-                    <figure>
-                        <div>
-                            <img src="https://i.pinimg.com/736x/04/57/94/045794816ce52f26d0d0014955612924.jpg" alt=""
-                                srcset="">
-                        </div>
-                        <figcaption>8번</figcaption>
-                    </figure>
-
+                <div id="paint_list" class="paint_list">
                 </div>
-
 
             </div>
 
