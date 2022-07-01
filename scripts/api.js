@@ -67,8 +67,6 @@ async function signup() {
     nickname: document.getElementById("nickname").value,
   };
 
-  console.log(data);
-
   const response = await fetch(BACK_URL + "user/", {
     method: "POST",
     headers: {
@@ -193,8 +191,6 @@ async function detail_modal(id) {
     let artist = response_json.artist_name;
     let like = response_json.like;
     let id = response_json.id;
-
-    console.log(like);
 
     html = `<div class="detail_modal_box">
     <div class="detail_modal_close" onclick="detail_modal_close()"><i class="fa-solid fa-circle-xmark"></i>

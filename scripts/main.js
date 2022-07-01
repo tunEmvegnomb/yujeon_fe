@@ -63,8 +63,6 @@ function info_submit() {
   let cost = document.getElementById("info_cost").value
   let image = document.getElementById("upload_file").files[0]
 
-  console.log(image)
-
   const formdata = new FormData();
     formdata.append("title", title);
     formdata.append("desc", desc);
@@ -90,6 +88,12 @@ function user_hover() {
 
 function detail_modal_close() {
   document.getElementById("detail_modal").style.display = "none";
+}
+
+document.getElementById("info_cost").keydown = function (e) {
+  if (e.keyCode == 13) {
+    info_submit();
+  }
 }
 
 user_hover()

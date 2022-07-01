@@ -36,7 +36,7 @@ body, h1, p{
     position: absolute;
     right: 20px;
     /* top: 0; */
-    width: 300px;
+    width: 20em;
     height: 35px;
     display: flex;
     justify-content: center;
@@ -370,18 +370,77 @@ body, h1, p{
         transform: translateZ(0);
     }
 }
+@media screen and (max-width: 810px){
+    .detail_modal_box{
+        flex-direction: column;
+        width: 500px;
+        height: 600px;
+    }
+    .detail_img {
+        width: 85%;
+        height: 50%;
+    }
+    .detail_info{
+        width: 85%;
+        height: 15%;
+    }
+    .detail_info h2{
+        font-size: 25px;
+    }
+    .detail_bottom{
+
+    }
+    .detail_artist{
+        font-size: 30px;
+    }
+    .detail_desc{
+        height: 80%;
+        overflow: hidden;
+    }
+}
+@media screen and (max-width: 510px){
+    .detail_modal_box{
+        flex-direction: column;
+        width: 350px;
+        height: 600px;
+    }
+    .detail_img {
+        width: 85%;
+        height: 50%;
+    }
+    .detail_info{
+        width: 85%;
+        height: 15%;
+    }
+    .detail_info h2{
+        font-size: 25px;
+    }
+    .detail_bottom{
+
+    }
+    .detail_artist{
+        font-size: 30px;
+    }
+    .detail_desc{
+        height: 80%;
+        overflow: hidden;
+    }
+}
 
 @media screen and (max-width: 450px){
     #welcome_user{
         display: none;
     }
     .menu_icon{
-        width: 200px;
+        width: 10em;
     }
     .upload_modal_box{
         width: 330px;
     }
     .info_input_box{
+        width: 330px;
+    }
+    .not_img_upload{
         width: 330px;
     }
 }
