@@ -96,13 +96,6 @@ async function signup() {
 async function image_upload() {
   const formdata = info_submit();
 
-  // const data = {
-  //     title : "타이틀 입니다!",
-  //     desc : "설명 입니다!",
-  //     image : formdata.image,
-  //     cost : 10000
-  // }
-
   const response = await fetch(BACK_URL + "post/upload/", {
     method: "POST",
     headers: {
@@ -121,7 +114,7 @@ async function image_upload() {
     alert("업로드 성공");
     window.location.reload();
   } else if (response.status === 400) {
-    alert("업로드 실패");
+    alert("업로드 실패")
     window.location.reload();
   }
 }

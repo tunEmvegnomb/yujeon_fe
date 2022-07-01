@@ -51,7 +51,7 @@ body, h1, p{
     font-size: 25px;
 }
 .login_button{
-    z-index: 5;
+    z-index: 20;
     cursor: pointer;
     margin: 0 0 0 20px;
     padding: 10px 20px;
@@ -60,7 +60,7 @@ body, h1, p{
     color: aliceblue;
 }
 .join_button{
-    z-index: 5;
+    z-index: 20;
     cursor: pointer;
     padding: 10px 20px;
     background-color: #cdcdcd;
@@ -384,6 +384,8 @@ body, h1, p{
     }
     .menu_icon {
         width: 220px;
+        margin: 0;
+        padding: 0px;
     }
     .main_img_list div:nth-child(5){
         display: flex;
@@ -400,7 +402,9 @@ body, h1, p{
         
     }
     .nav{
-        width: 91%;
+        width: 94%;
+        padding: 16px 5px;
+        display: flex;
     }
     .modal_title{
         display: none;
@@ -408,4 +412,8 @@ body, h1, p{
     .logo_icon{
         display: none;
     }
+    .logo{
+        margin: 0 0 0 25px;
+    }
+
 }
