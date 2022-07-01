@@ -161,7 +161,7 @@ body, h1, p{
     display: none;
 }
 .info_input_box input{
-    width: 95%;
+    /* width: 95%; */
     border-bottom: dashed 1px #000;
     outline: none;
     font-size: 12px;
@@ -169,7 +169,45 @@ body, h1, p{
     padding: 10px;
     /* border-radius: 20px; */
 }
-.info_input_box input:nth-child(3){
+.info_input_box input:not(:nth-child(1)){
+    width: 95%;
+}
+.info_radio_button{
+    display: flex;
+    position: absolute;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* width: 80px; */
+    right: 10px;
+    bottom: 40px;
+    border: none;
+    font-size: 15px;
+}
+.info_radio_button input{
+    width: 130px;
+    border: none;
+    background: #000;
+    color: white;
+}
+.info_radio_button label{
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+}
+.info_radio_button label:nth-child(1){
+    margin: 0;
+    cursor: pointer;
+}
+input[id="is_mine"]:checked + label {
+	background-color: #C4DFAA;
+    border-radius: 3px;
+}
+input[id="is_not_mine"]:checked + label {
+	background-color: #C4DFAA;
+    border-radius: 3px;
+}
+
+.info_input_box input:nth-child(4){
     border: none;
     border-top: dashed 1px #000;
     color: red;
@@ -228,11 +266,12 @@ body, h1, p{
     position: absolute;
     width: 100px;
     height: 5.2em;
-    background: white;
+    background-color:#C4DFAA;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
     animation: fadeinbottom 0.5s;
+    justify-content: space-around;
 }
 .user_menu div{
     cursor: pointer;
@@ -242,8 +281,10 @@ body, h1, p{
     width: 100%;
     border-bottom: dotted 1px #000;
     background-color:#C4DFAA;
-    font-weight: bold;
-    
+    font-weight: bold;  
+}
+.user_menu div:nth-child(3){
+    border: none;
 }
 .user_menu div:nth-child(1){
     color: red;
@@ -387,9 +428,6 @@ body, h1, p{
     .detail_info h2{
         font-size: 25px;
     }
-    .detail_bottom{
-
-    }
     .detail_artist{
         font-size: 30px;
     }
@@ -414,9 +452,6 @@ body, h1, p{
     }
     .detail_info h2{
         font-size: 25px;
-    }
-    .detail_bottom{
-
     }
     .detail_artist{
         font-size: 30px;

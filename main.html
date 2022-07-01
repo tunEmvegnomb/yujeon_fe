@@ -13,7 +13,7 @@
     <title>메인페이지 | 가제</title>
 </head>
 
-<body>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div class="main_bg">
         <!-- 네비게이션바 -->
         <nav class="nav">
@@ -59,10 +59,19 @@
                         class="fa-solid fa-ban"></i></button>
             </div>
             <div id="info_input_box" class="info_input_box">
+                <button onclick="image_upload()">전송</button>
                 <input id="info_title" placeholder="제목">
                 <textarea id="info_desc" placeholder="설명"></textarea>
                 <input onkeydown="image_upload_enter(this)" id="info_cost" placeholder="가격">
                 <button onclick="image_upload()">전송</button>
+                <div class="info_radio_button">
+                    <input type="radio" id="is_mine" name="is_mine" value=True hidden>
+                    <label for="is_mine">지금 게시</label>
+                    <input type="radio" id="is_not_mine" name="is_mine" value=False hidden>
+                    <label for="is_not_mine">일단 보관</label>
+                </div>
+                
+                </div>
             </div>
         </div>
 
@@ -101,8 +110,8 @@
         <!-- 메인 이미지 리스트  -->
         <div class="main_box">
             <div class="paint">
-
                 <div id="paint_list" class="paint_list">
+
                 </div>
 
             </div>

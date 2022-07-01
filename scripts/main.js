@@ -34,7 +34,7 @@ window.onload = ()=>{
 function payload_dat_get() {
   const payload = JSON.parse(localStorage.getItem("payload"));
   const nickname = payload.nickname;
-  html = `${nickname}님 환영합니다.`;
+  html = `<b>${nickname}님 환영합니다.`;
   document.getElementById("welcome_user").innerHTML = html;
 }
 
@@ -91,16 +91,26 @@ function img_upload_submit() {
 }
 
 function info_submit() {
+  if (document.getElementById("is_mine").checked) {
+    document.getElementById("is_mine").value = "True"
+  }
+  else {
+    document.getElementById("is_mine").value = "False"
+  }
+    
+
   let title = document.getElementById("info_title").value
   let desc = document.getElementById("info_desc").value
   let cost = document.getElementById("info_cost").value
   let image = document.getElementById("upload_file").files[0]
+  let is_mine = document.getElementById("is_mine").value
   
   const formdata = new FormData();
     formdata.append("title", title);
     formdata.append("desc", desc);
     formdata.append("cost", cost);
     formdata.append("image", image);
+    formdata.append("is_mine", is_mine);
 
   return formdata
 
@@ -124,7 +134,7 @@ function detail_modal_close() {
 }
 
 function image_upload_enter() {
-  console.log("hi")
+  // console.log("hi")
   var keyCode = event.keyCode;
   if (keyCode == 13) {
     image_upload();

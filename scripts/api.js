@@ -83,7 +83,7 @@ async function signup() {
     window.location.reload();
   } else if (response.status === 400) {
     alert("회원가입 실패");
-    window.location.reload();
+    // window.location.reload();
   }
 }
 
@@ -115,7 +115,7 @@ async function image_upload() {
     window.location.reload();
   } else if (response.status === 400) {
     alert("업로드 실패")
-    window.location.reload();
+    // window.location.reload();
   }
 }
 
@@ -152,6 +152,7 @@ async function get_img_list() {
     });
   } else if ((response.status === 401) | (response.status === 400)) {
     console.log("실패");
+    document.getElementById("menu_icon").style.display = "none";
     // window.location.reload();
   }
 }
