@@ -39,8 +39,7 @@ function login_check() {
 
   response.then(function (response) {
     if (response.status === 200) {
-      window.location.href = "./main.html";
-      console.log("인증성공");
+      window.location.replace("/main.html");
     } else if (response.status === 401) {
       console.log("인증실패");
     }

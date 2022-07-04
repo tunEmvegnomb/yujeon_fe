@@ -276,6 +276,7 @@ function post_like(id) {
 
   response.then((res) => {
     if (res.status === 200) {
+      // document.getElementById("detail_modal_box").style.animation = "scale 0.5s"
       detail_modal(id);
       // window.location.reload();
     } else if (res.status === 400) {
