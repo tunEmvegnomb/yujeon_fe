@@ -14,7 +14,7 @@
 </head>
 
 
-<body>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
 
     <!-- 네비게이션바 -->
     <nav id="nav" class="nav">
@@ -116,22 +116,8 @@
         </ul>
     </div>
     <!--  -->
-
+    <script src="./scripts/slide.js"></script>
 </body>
 
-<script>
-    var options = {
-        start: 0,
-        fadeIn: 400,
-        loop: true,
-        buttonPrev: 'Previous',
-        buttonNext: 'Next',
-        style: 'carousel',
-        spacing: -0.6,
-        nav: false,
-        buttons: true
-    };
-    $('.my_picture_list').flipster(options);
-</script>
 
 </html>

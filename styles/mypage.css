@@ -72,7 +72,13 @@ body,p,h1{
     color: red;
 }
 .my_picture_list{
-    margin-top: 30px;
+    margin-top: 80px;
+}
+.my_picture_list ul li img{
+    width: 600px;
+    height: 800px;
+    /* object-fit: cover; */
+    border-radius: 10px;
 }
 .title_h1{
     width: 100%;
@@ -91,34 +97,37 @@ body,p,h1{
     font-style: italic;
 }
 .my_picture_cost{
+    cursor: pointer;
     position: absolute;
     left: 10px;
     top: 10px;
     padding: 5px 20px;
     border-radius: 20px;
-    font-size: 40px;
+    font-size: 20px;
     color: #FF5D5D;
     background: #FFE3A9;
     box-shadow: 0px 0px 10px #000;
 }
 .my_picture_like{
+    cursor: pointer;
     position: absolute;
     right: 10px;
     top: 10px;
     padding: 5px 20px;
     border-radius: 20px;
-    font-size: 40px;
+    font-size: 20px;
     color: white;
     background: #FF5D5D;
     box-shadow: 0px 0px 10px #000;
 }
 .my_picture_public{
+    cursor: pointer;
     position: absolute;
     right: 10px;
     bottom: 20px;
     padding: 5px 20px;
     border-radius: 20px;
-    font-size: 40px;
+    font-size: 20px;
     color: #ff0000;
     background: #FFC3C3;
     box-shadow: 0px 0px 10px #000;

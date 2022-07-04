@@ -69,7 +69,7 @@ function img_upload_cancel() {
   document.getElementById("upload_file").value = null;
   document.getElementById("info_title").value = null;
   document.getElementById("info_desc").value = null;
-  document.getElementById("info_cost").value = null;
+  document.getElementById("info_cost").value = 3;
   document.body.style.overflow = "auto";
   document.body.style.touchAction = "auto";
 }
@@ -114,7 +114,7 @@ function info_submit() {
     formdata.append("desc", desc);
     formdata.append("cost", cost);
     formdata.append("image", image);
-    formdata.append("is_mine", is_mine);
+    formdata.append("is_exposure", is_mine);
 
   return formdata
 
