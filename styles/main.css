@@ -217,7 +217,7 @@ body, h1, p{
     margin: 0;
     cursor: pointer;
 }
-input[id="is_mine"]:checked + label {
+input[id="is_exposure"]:checked + label {
 	background-color: #C4DFAA;
     border-radius: 3px;
     padding: 5px;
