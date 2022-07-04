@@ -6,7 +6,20 @@ body, h1, p{
     overflow: hidden;
     touch-action: none;
 }
-
+.loadingimage{
+    z-index: 800;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+.loadingimage img{
+    width: 90px;
+    height: 90px;
+}
 .main_bg{
     width: 100%;
     height: 100%;
@@ -240,6 +253,7 @@ input[id="is_not_mine"]:checked + label {
     color: white;
     right: 10px;
     bottom: 10px;
+    cursor: pointer;
 }
 .not_img_upload{
     position: relative;

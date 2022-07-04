@@ -97,6 +97,8 @@ async function signup() {
 async function image_upload() {
   const formdata = info_submit();
 
+  document.getElementById("loadingimage").style.display = "flex";
+
   const response = await fetch(BACK_URL + "post/upload/", {
     method: "POST",
     headers: {
@@ -114,9 +116,11 @@ async function image_upload() {
   console.log("여긴 로딩끝?");
 
   if (response.status === 200) {
+    document.getElementById("loadingimage").style.display = "none";
     alert("업로드 성공");
     window.location.reload();
   } else if (response.status === 400) {
+    document.getElementById("loadingimage").style.display = "none";
     alert("업로드 실패")
     // window.location.reload();
   }
