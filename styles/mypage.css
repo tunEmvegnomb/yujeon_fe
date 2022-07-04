@@ -72,11 +72,11 @@ body,p,h1{
     color: red;
 }
 .my_picture_list{
-    margin-top: 80px;
+    margin-top: 130px;
 }
 .my_picture_list ul li img{
-    width: 600px;
-    height: 800px;
+    width: 500px;
+    height: 600px;
     /* object-fit: cover; */
     border-radius: 10px;
 }
