@@ -7,6 +7,6 @@ var options = {
     style: 'carousel',
     spacing: -0.3,
     nav: false,
-    buttons: true
+    buttons: false
 };
 $('.my_picture_list').flipster(options);
