@@ -96,6 +96,7 @@ async function signup() {
 
 async function image_upload() {
   const formdata = info_submit();
+  
 
   document.getElementById("loadingimage").style.display = "flex";
 
@@ -110,7 +111,7 @@ async function image_upload() {
     //formdata
     body: formdata,
   });
-
+  console.log(formdata)
   console.log("여긴 로딩시작?");
   const response_json = await response.json();
   console.log("여긴 로딩끝?");

@@ -95,27 +95,37 @@ function img_upload_submit() {
 }
 
 function info_submit() {
-  if (document.getElementById("is_mine").checked) {
-    document.getElementById("is_mine").value = "True"
+  let is_exposure = ""
+
+
+  if (document.getElementById("is_exposure").checked) {
+    is_exposure = document.getElementById("is_exposure").value
+    // console.log("열람 체크"+is_exposure)
+  }
+  else if (document.getElementById("is_not_mine").checked) {
+    is_exposure = document.getElementById("is_not_mine").value
+    // console.log("미열람 체크"+is_exposure)
   }
   else {
-    document.getElementById("is_mine").value = "False"
+    document.getElementById("is_exposure").value = "True"
+    is_exposure = document.getElementById("is_exposure").value
+    // console.log("안 체크"+is_exposure)
   }
-    
 
   let title = document.getElementById("info_title").value
   let desc = document.getElementById("info_desc").value
   let cost = document.getElementById("info_cost").value
   let image = document.getElementById("upload_file").files[0]
-  let is_mine = document.getElementById("is_mine").value
+  
+  let is_mine = "True"
   
   const formdata = new FormData();
     formdata.append("title", title);
     formdata.append("desc", desc);
     formdata.append("cost", cost);
     formdata.append("image", image);
-    formdata.append("is_exposure", is_mine);
-
+    formdata.append("is_exposure", is_exposure);
+    formdata.append("is_mine", is_mine);
   return formdata
 
 }
@@ -152,6 +162,11 @@ function user_info() {
 }
 function user_collection(){
   window.location.href = "./mypage.html";
+}
+
+function user_profile() {
+  let user_profile = get_user_profile();
+  console.log(user_profile)
 }
 
 // user_info()
