@@ -37,8 +37,8 @@ async function login_check() {
     },
   });
 
-  response_json = await response.json();
-  console.log(response_json);
+  // response_json = await response.json();
+  // console.log(response_json);
 
   response.then(function (response) {
     if (response.status === 200) {
