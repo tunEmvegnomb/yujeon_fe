@@ -1,6 +1,33 @@
 FRONT_URL = "http://127.0.0.1:5500/";
 BACK_URL = "http://127.0.0.1:8000/";
 
+window.onload = () => {
+  const payload = JSON.parse(localStorage.getItem("payload"));
+
+  if (payload.exp > Date.now() / 1000) {
+    
+  } else {
+    const requestRefreshToken = async (url) => {
+      const response = await fetch(url, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          "refresh": localStorage.getItem("yujeon_refresh_token"),
+        })}
+      );
+      return response.json();
+    };
+
+    requestRefreshToken(BACK_URL + "user/api/token/refresh/").then((data) => {
+      console.log(data.access)
+      localStorage.setItem("yujeon_access_token", data.access);
+
+    });
+  }
+};
+  
 async function login_api() {
   const data = {
     username: document.getElementById("username").value,
@@ -46,10 +73,9 @@ async function login_api() {
     localStorage.setItem("payload", jsonPayload);
 
     window.location.reload();
-  } else if (response.status === 400 | response.status === 401) {
+  } else if ((response.status === 400) | (response.status === 401)) {
     alert("아이디 혹은 비밀번호를 확인해 주세요.");
   }
-
 }
 
 function logout() {
@@ -96,7 +122,6 @@ async function signup() {
 
 async function image_upload() {
   const formdata = info_submit();
-  
 
   document.getElementById("loadingimage").style.display = "flex";
 
@@ -111,7 +136,7 @@ async function image_upload() {
     //formdata
     body: formdata,
   });
-  console.log(formdata)
+  console.log(formdata);
   console.log("여긴 로딩시작?");
   const response_json = await response.json();
   console.log("여긴 로딩끝?");
@@ -122,7 +147,7 @@ async function image_upload() {
     window.location.reload();
   } else if (response.status === 400) {
     document.getElementById("loadingimage").style.display = "none";
-    alert("업로드 실패")
+    alert("업로드 실패");
     // window.location.reload();
   }
 }
@@ -266,7 +291,7 @@ function post_like(id) {
   });
 }
 
-function user_info_get(){
+function user_info_get() {
   const response = fetch(BACK_URL + "user/auth/", {
     method: "GET",
     headers: {
@@ -284,8 +309,6 @@ function user_info_get(){
     }
   });
 }
-      
-
 
 user_info_get();
 get_img_list();

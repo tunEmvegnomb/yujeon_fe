@@ -27,7 +27,7 @@ document.getElementById("join_button").onclick = () => {
 
 BACK_URL = "http://127.0.0.1:8000/";
 
-async function login_check() {
+function login_check() {
   const response = fetch(BACK_URL + "user/auth/", {
     method: "GET",
     headers: {
@@ -36,9 +36,6 @@ async function login_check() {
       Authorization: "Bearer " + localStorage.getItem("yujeon_access_token"),
     },
   });
-
-  // response_json = await response.json();
-  // console.log(response_json);
 
   response.then(function (response) {
     if (response.status === 200) {
