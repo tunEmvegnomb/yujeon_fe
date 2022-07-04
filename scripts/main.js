@@ -146,6 +146,14 @@ function image_upload_enter() {
     image_upload();
   }
 }
+function user_info() {
+  let user_info = user_info_get();
+  console.log(user_info)
+}
+function user_collection(){
+  window.location.href = "./mypage.html";
+}
 
+// user_info()
 user_hover()
 payload_dat_get();

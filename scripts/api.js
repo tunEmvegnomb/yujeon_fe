@@ -265,4 +265,26 @@ function post_like(id) {
   });
 }
 
+function user_info_get(){
+  const response = fetch(BACK_URL + "user/auth/", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("yujeon_access_token"),
+    },
+  });
+
+  response.then((res) => {
+    if (res.status === 200) {
+      return res.json();
+    } else if (res.status === 400) {
+      alert("실패");
+    }
+  });
+}
+      
+
+
+user_info_get();
 get_img_list();

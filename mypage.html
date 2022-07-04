@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/mypage.css">
+    <script src="https://kit.fontawesome.com/0e01622099.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/jquery.flipster.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./scripts/jquery.flipster.min.js"></script>
+    <title>마이 페이지 | 가제</title>
+</head>
+
+
+<body>
+
+    <!-- 네비게이션바 -->
+    <nav id="nav" class="nav">
+        <div class="logo"><i class="fa-solid fa-palette"></i><span>유전</span></div>
+        <div id="menu_icon" class="menu_icon">
+            <div id="welcome_user">
+                <span>황리</span>와 아이들
+            </div>
+            <div>
+                <i style="font-size:25px; color:#ff0000;" class="fa-solid fa-crown"></i>
+            </div>
+            <div>
+                <i style="font-size:25px;" class="fa-solid fa-comment-dots"></i>
+            </div>
+            <div class="user_info">
+                <i style="font-size:25px; color:#FFC4C4" id="user_info" class="fa-solid fa-user"></i>
+                <div id="user_menu" class="user_menu">
+                    <div>1000P</div>
+                    <div>컬렉션</div>
+                    <div onclick="logout()">로그아웃</div>
+                </div>
+            </div>
+
+            <div onclick="img_upload_button()">
+                <i style="font-size:25px;" class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
+        </div>
+    </nav>
+    <!--  -->
+    <div class="title_h1">
+        <h1>User님의 컬렉션</h1>
+    </div>
+    <!-- 3d 슬라이드 영역 -->
+
+    <div class="my_picture_list">
+        <ul>
+            <li>
+                <img src="https://cdn.pixabay.com/photo/2016/01/20/21/41/drunkards-1152424_1280.jpg" />
+                <div class="my_picture_cost">
+                    50P
+                </div>
+                <div class="my_picture_like">
+                    좋아요 5개
+                </div>
+                <div class="my_picture_public">
+                    지금 공개
+                </div>
+            </li>
+            <li>
+                <img src="https://cdn.pixabay.com/photo/2019/01/04/05/32/cat-3912485_1280.jpg" />
+                <div class="my_picture_cost">
+                    3000000P
+                </div>
+                <div class="my_picture_like">
+                    좋아요 555개
+                </div>
+                <div class="my_picture_public">
+                    지금 공개
+                </div>
+            </li>
+            <li>
+                <img src="https://cdn.pixabay.com/photo/2016/01/13/16/29/the-framework-1138291_1280.jpg" />
+                <div class="my_picture_cost">
+                    300000P
+                </div>
+                <div class="my_picture_like">
+                    좋아요 51개
+                </div>
+                <div class="my_picture_public">
+                    지금 공개
+                </div>
+            </li>
+            <li>
+                <img src="https://cdn.pixabay.com/photo/2016/01/13/16/28/the-framework-1138284_1280.jpg" />
+                <div class="my_picture_cost">
+                    3000P
+                </div>
+                <div class="my_picture_like">
+                    좋아요 25개
+                </div>
+                <div class="my_picture_public">
+                    지금 공개
+                </div>
+            </li>
+            <li>
+                <img src="https://cdn.pixabay.com/photo/2016/01/13/16/29/the-framework-1138295_1280.jpg" />
+                <div class="my_picture_cost">
+                    300P
+                </div>
+                <div class="my_picture_like">
+                    좋아요 15개
+                </div>
+                <div class="my_picture_public">
+                    지금 공개
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+    <!--  -->
+
+</body>
+
+<script>
+    var options = {
+        start: 0,
+        fadeIn: 400,
+        loop: true,
+        buttonPrev: 'Previous',
+        buttonNext: 'Next',
+        style: 'carousel',
+        spacing: -0.6,
+        nav: false,
+        buttons: true
+    };
+    $('.my_picture_list').flipster(options);
+</script>
+
+</html>
