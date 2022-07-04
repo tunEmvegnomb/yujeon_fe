@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="./dist/jquery.flipster.min.css">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" href="./styles/slide.css">
+<script src="./scripts/slide.js"></script>
+
+<div class="my-flipster">
+    <ul>
+        <li><img src="" /></li>
+        <li>
+            <p>Plain ol' <abbr>HTML</abbr>!</p>
+        </li>
+        ...
+    </ul>
+</div>
+
+<script>
+    var options = {
+        start: 0,
+        fadeIn: 400,
+        loop: true,
+        buttonPrev: 'Previous',
+        buttonNext: 'Next',
+        style: 'carousel',
+        spacing: -0.6,
+        nav: false,
+        buttons: true
+    };
+    $('.my-flipster').flipster(options);
+</script>
+

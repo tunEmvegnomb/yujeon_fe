@@ -282,6 +282,7 @@ body, h1, p{
     display: flex;
     flex-direction: column;
     font-size: 12px;
+    cursor: pointer;
 }
 .login_modal_box input{
     margin: 0px 0px 10px 0px;

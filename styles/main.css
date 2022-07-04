@@ -2,6 +2,11 @@ body, h1, p{
     margin: 0;
     background-color: #fffd92;
 }
+.body_scroll_stop{
+    overflow: hidden;
+    touch-action: none;
+}
+
 .main_bg{
     width: 100%;
     height: 100%;
@@ -12,10 +17,10 @@ body, h1, p{
     background-color: #fffd92;
 }
 .nav{
-    position: relative;
+    /* position: relative; */
     padding: 16px;
     width: 90%;
-    height: 35px;
+    /* height: 35px; */
     display: flex;
     /* justify-content: space-around; */
     align-items: center;
@@ -191,8 +196,8 @@ body, h1, p{
 }
 .info_radio_button label{
     cursor: pointer;
-    padding: 5px;
     border-radius: 10px;
+    padding: 5px;
 }
 .info_radio_button label:nth-child(1){
     margin: 0;
@@ -201,10 +206,13 @@ body, h1, p{
 input[id="is_mine"]:checked + label {
 	background-color: #C4DFAA;
     border-radius: 3px;
+    padding: 5px;
 }
 input[id="is_not_mine"]:checked + label {
-	background-color: #C4DFAA;
+	background-color: #fb0000;
     border-radius: 3px;
+    padding: 5px;
+    color: white;
 }
 
 .info_input_box input:nth-child(4){

@@ -7,10 +7,17 @@ document.getElementById("login_button").onclick = () => {
 };
 
 document.getElementById("login_modal_box_close").onclick = () => {
+  document.getElementById("username").value = null;
+  document.getElementById("password").value = null;
   document.getElementById("login_modal").style.display = "none";
 };
 
 document.getElementById("join_modal_box_close").onclick = () => {
+  document.getElementById("join_username").value = null;
+  document.getElementById("join_password").value = null;
+  document.getElementById("join_password2").value = null;
+  document.getElementById("email").value = null;
+  document.getElementById("nickname").value = null;
   document.getElementById("join_modal").style.display = "none";
 };
 
@@ -35,7 +42,7 @@ async function login_check() {
       window.location.href = "./main.html";
       console.log("인증성공");
     } else if (response.status === 401) {
-      console.log("인증실패");
+      
     }
   });
 }

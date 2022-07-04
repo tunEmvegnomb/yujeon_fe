@@ -46,9 +46,10 @@ async function login_api() {
     localStorage.setItem("payload", jsonPayload);
 
     window.location.reload();
-  } else if (response.status === 400) {
-    alert("로그인에 실패 했습니다.");
+  } else if (response.status === 400 | response.status === 401) {
+    alert("아이디 혹은 비밀번호를 확인해 주세요.");
   }
+
 }
 
 function logout() {
@@ -108,7 +109,9 @@ async function image_upload() {
     body: formdata,
   });
 
+  console.log("여긴 로딩시작?");
   const response_json = await response.json();
+  console.log("여긴 로딩끝?");
 
   if (response.status === 200) {
     alert("업로드 성공");
@@ -133,7 +136,7 @@ async function get_img_list() {
 
   if (response.status === 200) {
     response_json.forEach((item) => {
-      let image = item.image;
+      let image = item.artimage;
       let title = item.title;
       let desc = item.desc;
       let cost = item.cost;
@@ -143,7 +146,7 @@ async function get_img_list() {
       html = `
         <figure>
         <div onclick="detail_modal(${id})">
-            <img src="http://127.0.0.1:8000${image}" alt="${desc}" srcset="">
+            <img src="${image}" alt="${desc}" srcset="">
         </div>
         <figcaption">${artist}</figcaption>
     </figure>`;
@@ -151,13 +154,15 @@ async function get_img_list() {
       document.getElementById("paint_list").innerHTML += html;
     });
   } else if ((response.status === 401) | (response.status === 400)) {
-    console.log("실패");
     document.getElementById("menu_icon").style.display = "none";
+    document.getElementById("nav").style.display = "none";
     // window.location.reload();
   }
 }
 
 async function detail_modal(id) {
+  document.body.style.overflow = "hidden";
+  document.body.style.touchAction = "none";
   const payload = JSON.parse(localStorage.getItem("payload"));
   const user_id = payload.user_id;
 
@@ -178,7 +183,7 @@ async function detail_modal(id) {
   const response_json = await response.json();
 
   if (response.status === 200) {
-    let image = response_json.image;
+    let image = response_json.artimage;
     let title = response_json.title;
     let desc = response_json.desc;
     let cost = response_json.cost;
@@ -191,7 +196,7 @@ async function detail_modal(id) {
     </div>
   
     <div class="detail_img">
-        <img src="http://127.0.0.1:8000${image}" alt="${desc}" srcset="">
+        <img src="${image}" alt="${desc}" srcset="">
     </div>
     <div class="detail_info">
         <h2>${title}</h2>

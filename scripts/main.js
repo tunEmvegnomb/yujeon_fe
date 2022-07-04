@@ -70,10 +70,14 @@ function img_upload_cancel() {
   document.getElementById("info_title").value = null;
   document.getElementById("info_desc").value = null;
   document.getElementById("info_cost").value = null;
+  document.body.style.overflow = "auto";
+  document.body.style.touchAction = "auto";
 }
 
 function img_upload_button() {
   document.getElementById("upload_modal_box").style.display = "flex";
+  document.body.style.overflow = "hidden";
+  document.body.style.touchAction = "none";
 }
 
 function img_upload_submit() {
@@ -131,6 +135,8 @@ function user_hover() {
 
 function detail_modal_close() {
   document.getElementById("detail_modal").style.display = "none";
+  document.body.style.overflow = "auto";
+  document.body.style.touchAction = "auto";
 }
 
 function image_upload_enter() {
