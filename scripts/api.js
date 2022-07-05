@@ -233,7 +233,7 @@ async function detail_modal(id) {
         <div class="detail_artist">Artist<span>${artist}</span></div>
         <div class="detail_desc">${desc}</div>
         <div class="detail_bottom">
-            <div class="detail_buy">
+            <div onclick="detail_buy(${id})" class="detail_buy">
                 ${cost}포인트 바로 구매!
             </div>
             <div onclick="post_like(${id})" id="detail_like" class="detail_like">
@@ -310,6 +310,35 @@ function user_info_get() {
     }
   });
 }
+async function detail_buy(post_id) {
+
+  const response = await fetch(BACK_URL + "post/purchase/" + post_id, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("yujeon_access_token"),
+    },
+  });
+
+    const response_json = await response.json();
+
+    if (response.status === 200) {
+      console.log(response_json);
+    }
+    else if (response.status === 400) {
+      if (response_json.message)
+        alert(response_json.message);
+
+      else if(response_json.error){
+        alert(response_json.error);
+      }  
+    }
+     
+      
+}
+
+
 
 user_info_get();
 get_img_list();
