@@ -22,7 +22,7 @@ window.onload = () => {
 
     requestRefreshToken(BACK_URL + "user/api/token/refresh/").then((data) => {
       localStorage.setItem("yujeon_access_token", data.access);
-
     });
+    window.location.reload();
   }
 };
