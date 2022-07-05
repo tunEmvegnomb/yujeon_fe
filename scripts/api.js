@@ -1,40 +1,8 @@
-FRONT_URL = "http://127.0.0.1:5500/";
-BACK_URL = "http://127.0.0.1:8000/";
-
-window.onload = () => {
-  const payload = JSON.parse(localStorage.getItem("payload"));
-
-  if (payload.exp > Date.now() / 1000) {
-    
-  } else {
-    const requestRefreshToken = async (url) => {
-      const response = await fetch(url, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify({
-          "refresh": localStorage.getItem("yujeon_refresh_token"),
-        })}
-      );
-      return response.json();
-    };
-
-    requestRefreshToken(BACK_URL + "user/api/token/refresh/").then((data) => {
-      console.log(data.access)
-      localStorage.setItem("yujeon_access_token", data.access);
-
-    });
-  }
-};
-  
 async function login_api() {
   const data = {
     username: document.getElementById("username").value,
     password: document.getElementById("password").value,
   };
-
-  // console.log(data)
 
   const response = await fetch(BACK_URL + "user/api/yujeon/token/", {
     method: "POST",
@@ -50,9 +18,6 @@ async function login_api() {
   const accessToken = response_json.access;
   const refreshToken = response_json.refresh;
 
-  // document.querySelector("#access-token").value = accessToken;
-  // document.querySelector("#refresh-token").value = refreshToken;
-
   if (response.status === 200) {
     localStorage.setItem("yujeon_access_token", response_json.access);
     localStorage.setItem("yujeon_refresh_token", response_json.refresh);
@@ -67,8 +32,6 @@ async function login_api() {
         })
         .join("")
     );
-
-    // document.querySelector("#payload").value = jsonPayload;
 
     localStorage.setItem("payload", jsonPayload);
 
@@ -110,15 +73,8 @@ async function signup() {
     window.location.reload();
   } else if (response.status === 400) {
     alert("회원가입 실패");
-    // window.location.reload();
   }
 }
-
-// window.onload = ()=>{
-//     const payload = JSON.parse(localStorage.getItem("payload"));
-
-//     console.log(payload.nickname)
-// }
 
 async function image_upload() {
   const formdata = info_submit();
@@ -128,18 +84,11 @@ async function image_upload() {
   const response = await fetch(BACK_URL + "post/upload/", {
     method: "POST",
     headers: {
-      // Accept: "multipart/form-data",
-      // "Content-Type": "multipart/form-data",
       Authorization: "Bearer " + localStorage.getItem("yujeon_access_token"),
     },
-    //from data
-    //formdata
     body: formdata,
   });
-  console.log(formdata);
-  console.log("여긴 로딩시작?");
   const response_json = await response.json();
-  console.log("여긴 로딩끝?");
 
   if (response.status === 200) {
     document.getElementById("loadingimage").style.display = "none";
@@ -164,7 +113,6 @@ async function get_img_list() {
 
   const response_json = await response.json();
 
-  console.log(response_json)
 
   if (response.status === 200) {
     response_json.forEach((item) => {
@@ -185,10 +133,11 @@ async function get_img_list() {
 
       document.getElementById("paint_list").innerHTML += html;
     });
+    document.getElementById("menu_icon").style.display = "flex";
+    document.getElementById("nav").style.display = "flex";
   } else if ((response.status === 401) | (response.status === 400)) {
     document.getElementById("menu_icon").style.display = "none";
     document.getElementById("nav").style.display = "none";
-    // window.location.reload();
   }
 }
 
@@ -213,7 +162,6 @@ async function detail_modal(id) {
   });
 
   const response_json = await response.json();
-  console.log(response_json)
 
   if (response.status === 200) {
     let image = response_json.artimage;
@@ -275,17 +223,13 @@ function post_like(collection_id) {
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("yujeon_access_token"),
     },
-    // body: JSON.stringify(data),
   });
 
   response.then((res) => {
     if (res.status === 200) {
-      // document.getElementById("detail_modal_box").style.animation = "scale 0.5s"
       detail_modal(collection_id);
-      // window.location.reload();
     } else if (res.status === 400) {
       alert("좋아요 실패");
-      // window.location.reload();
     }
 
     if (response.status === 200) {
@@ -343,8 +287,6 @@ async function detail_buy(collection_id) {
      
       
 }
-
-
 
 user_info_get();
 get_img_list();

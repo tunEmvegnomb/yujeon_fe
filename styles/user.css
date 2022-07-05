@@ -231,7 +231,7 @@ body, h1, p{
 .login_modal_box{
     position: relative;
     width: 484px;
-    max-height: 55%;
+    max-height: 100%;
     background-color: white;
     border-radius: 30px;
     /* overflow: hidden; */

@@ -72,7 +72,7 @@ body,p,h1{
     color: red;
 }
 .my_picture_list{
-    margin-top: 130px;
+    margin-top: 60px;
 }
 .my_picture_list ul li img{
     width: 500px;
@@ -80,11 +80,13 @@ body,p,h1{
     /* object-fit: cover; */
     border-radius: 10px;
 }
+
 .title_h1{
     width: 100%;
     text-align: center;
     display: flex;
     justify-content: center;
+    margin-top: 50px;
 
 }
 .title_h1 h1{
@@ -99,11 +101,11 @@ body,p,h1{
 .my_picture_cost{
     cursor: pointer;
     position: absolute;
-    left: 10px;
-    top: 10px;
+    left: 5px;
+    top: 5px;
     padding: 5px 20px;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 12px;
     color: #FF5D5D;
     background: #FFE3A9;
     box-shadow: 0px 0px 10px #000;
@@ -111,24 +113,84 @@ body,p,h1{
 .my_picture_like{
     cursor: pointer;
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 5px;
+    top: 5px;
     padding: 5px 20px;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 12px;
     color: white;
     background: #FF5D5D;
     box-shadow: 0px 0px 10px #000;
 }
 .my_picture_public{
+    text-align: center;
     cursor: pointer;
     position: absolute;
+    width: 85%;
     right: 10px;
-    bottom: 20px;
+    bottom: 10px;
     padding: 5px 20px;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 12px;
     color: #ff0000;
     background: #FFC3C3;
     box-shadow: 0px 0px 10px #000;
+}
+.collection_info{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+}
+.user_info{
+    display: flex;
+    justify-content: center;
+}
+.user_info figure div{   
+    text-align: center;
+    cursor: pointer;
+}
+.user_info figure{
+    position: relative;
+}
+.user_info figure div:nth-child(1){
+    font-size: 40px;
+}
+.user_info figure div:nth-child(2){
+    font-weight: bold;
+    font-size: 14px;
+}
+.grade_info{
+    right: -170px;
+    top: 50px;
+    position: absolute;
+    width: 150px;
+    background: #000;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    animation: scale 0.5s;
+    display: none;
+}
+.collection_info figure{
+    text-align: center;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0.7);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-height: 1080px) {
+    .my_picture_list ul li img{
+        width: 300px;
+        height: 400px;
+    }
+    
 }

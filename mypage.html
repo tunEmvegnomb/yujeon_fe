@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="/styles/jquery.flipster.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./scripts/jquery.flipster.min.js"></script>
-    <!-- !-- <script src="https://kit.fontawesome.com/0e01622099.js" crossorigin="anonymous"></script> --> -->
-    
+    <script src="https://kit.fontawesome.com/0e01622099.js" crossorigin="anonymous"></script>
+
     <title>마이 페이지 | 가제</title>
 </head>
 
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
 
     <!-- 네비게이션바 -->
-    <nav id="nav" class="nav">
+    <!-- <nav id="nav" class="nav">
         <div class="logo"><i class="fa-solid fa-palette"></i><span>유전</span></div>
         <div id="menu_icon" class="menu_icon">
             <div id="welcome_user">
@@ -42,24 +42,49 @@
                 <i style="font-size:25px;" class="fa-solid fa-cloud-arrow-up"></i>
             </div>
         </div>
-    </nav>
+    </nav> -->
     <!--  -->
     <div class="title_h1">
-        <h1>User님의 컬렉션</h1>
+        <h1><span id="user_nickname">User</span>님의 컬렉션</h1>
+    </div>
+    <div class="user_info">
+        <figure>
+            <div onclick="go_mypage()">🏠</div>
+            <div>홈으로 이동</div>
+        </figure>
+        <figure>
+            <div id="grade">🥉</div>
+            <div>브론즈</div>
+            <div id="grade_info" class="grade_info">좋아요가 많은 그림을 수집하면, 컬렉션 등급이 올라갑니다!</div>
+        </figure>
     </div>
 
     <!-- 3d 슬라이드 영역 -->
     <div class="my_picture_list">
         <ul id="picture_list_get">
-    
-    
+
+
         </ul>
     </div>
     <!--  -->
-    
+    <div class="collection_info">
+        <figure>
+            <h4>보유 컬렉션</h4>
+            <h1 id="collection_count" coclass="collection_count">40개</h1>
+        </figure>
+        <figure>
+            <h4>좋아요</h4>
+            <h1 id="collection_like" coclass="collection_count">...</h1>
+        </figure>
+        <figure>
+            <h4>판매가</h4>
+            <h1 id="collection_cost" coclass="collection_count">...</h1>
+        </figure>
+    </div>
+
     <script src="./scripts/mypage.js"></script>
-    <script src="./scripts/slide.js"></script>
-   
+    <script src="./scripts/token.js"></script>
+
 </body>
 
 
