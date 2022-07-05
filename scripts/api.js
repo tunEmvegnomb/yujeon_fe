@@ -164,6 +164,8 @@ async function get_img_list() {
 
   const response_json = await response.json();
 
+  console.log(response_json)
+
   if (response.status === 200) {
     response_json.forEach((item) => {
       let image = item.artimage;
@@ -211,6 +213,7 @@ async function detail_modal(id) {
   });
 
   const response_json = await response.json();
+  console.log(response_json)
 
   if (response.status === 200) {
     let image = response_json.artimage;
@@ -220,6 +223,7 @@ async function detail_modal(id) {
     let artist = response_json.artist_name;
     let like = response_json.like;
     let id = response_json.id;
+    let collection_id = response_json.collection_id;
 
     html = `<div class="detail_modal_box">
     <div class="detail_modal_close" onclick="detail_modal_close()"><i class="fa-solid fa-circle-xmark"></i>
@@ -233,10 +237,10 @@ async function detail_modal(id) {
         <div class="detail_artist">Artist<span>${artist}</span></div>
         <div class="detail_desc">${desc}</div>
         <div class="detail_bottom">
-            <div onclick="detail_buy(${id})" class="detail_buy">
+            <div onclick="detail_buy(${collection_id})" class="detail_buy">
                 ${cost}포인트 바로 구매!
             </div>
-            <div onclick="post_like(${id})" id="detail_like" class="detail_like">
+            <div onclick="post_like(${collection_id})" id="detail_like" class="detail_like">
             <i class="fa-regular fa-heart"></i>
                 <!-- <i class="fa-solid fa-heart"></i> -->
                 ${like.length}
@@ -263,8 +267,8 @@ async function detail_modal(id) {
 
   document.getElementById("detail_modal").style.display = "flex";
 }
-function post_like(id) {
-  const response = fetch(BACK_URL + "post/like/" + id, {
+function post_like(collection_id) {
+  const response = fetch(BACK_URL + "post/like/" + collection_id, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -277,7 +281,7 @@ function post_like(id) {
   response.then((res) => {
     if (res.status === 200) {
       // document.getElementById("detail_modal_box").style.animation = "scale 0.5s"
-      detail_modal(id);
+      detail_modal(collection_id);
       // window.location.reload();
     } else if (res.status === 400) {
       alert("좋아요 실패");
@@ -310,9 +314,9 @@ function user_info_get() {
     }
   });
 }
-async function detail_buy(post_id) {
+async function detail_buy(collection_id) {
 
-  const response = await fetch(BACK_URL + "post/purchase/" + post_id, {
+  const response = await fetch(BACK_URL + "post/purchase/" + collection_id, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -324,7 +328,9 @@ async function detail_buy(post_id) {
     const response_json = await response.json();
 
     if (response.status === 200) {
+      alert(response_json.message);
       console.log(response_json);
+      window.location.reload();
     }
     else if (response.status === 400) {
       if (response_json.message)

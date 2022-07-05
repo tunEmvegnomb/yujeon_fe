@@ -67,16 +67,13 @@ function info_submit() {
 
   if (document.getElementById("is_exposure").checked) {
     is_exposure = document.getElementById("is_exposure").value
-    // console.log("열람 체크"+is_exposure)
   }
   else if (document.getElementById("is_not_mine").checked) {
     is_exposure = document.getElementById("is_not_mine").value
-    // console.log("미열람 체크"+is_exposure)
   }
   else {
     document.getElementById("is_exposure").value = "True"
     is_exposure = document.getElementById("is_exposure").value
-    // console.log("안 체크"+is_exposure)
   }
 
   let title = document.getElementById("info_title").value
