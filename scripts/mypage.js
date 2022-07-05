@@ -72,7 +72,6 @@ function go_mypage() {
     window.location.replace("main.html")
 }
 function collection_click(cost,like) {
-    console.log(cost,like)
     document.getElementById("collection_like").innerText = like
     document.getElementById("collection_cost").innerText = cost
 }

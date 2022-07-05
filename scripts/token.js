@@ -4,8 +4,8 @@ BACK_URL = "http://127.0.0.1:8000/";
 window.onload = () => {
   const payload = JSON.parse(localStorage.getItem("payload"));
 
-  if (payload.exp > Date.now() / 1000) {
-    
+  if (payload.exp < Date.now() / 1000) {
+    console.log(payload.exp)
   } else {
     const requestRefreshToken = async (url) => {
       const response = await fetch(url, {
@@ -22,7 +22,8 @@ window.onload = () => {
 
     requestRefreshToken(BACK_URL + "user/api/token/refresh/").then((data) => {
       localStorage.setItem("yujeon_access_token", data.access);
+      window.location.reload();
     });
-    window.location.reload();
+    
   }
 };
