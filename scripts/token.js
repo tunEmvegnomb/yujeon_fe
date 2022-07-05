@@ -1,6 +1,6 @@
 FRONT_URL = "http://127.0.0.1:5500/";
-// BACK_URL = "http://127.0.0.1:8000/";
-BACK_URL = "http://3.35.165.192/";
+BACK_URL = "http://127.0.0.1:8000/";
+// BACK_URL = "http://3.35.165.192/";
 
 window.onload = () => {
   const payload = JSON.parse(localStorage.getItem("payload"));

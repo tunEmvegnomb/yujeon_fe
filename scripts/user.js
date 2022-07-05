@@ -1,4 +1,5 @@
-BACK_URL = "http://3.35.165.192/";
+// BACK_URL = "http://3.35.165.192/";
+BACK_URL = "http://127.0.0.1:8000/"
 
 function login_button_click() {
   document.getElementById("login_modal").style.display = "flex";

@@ -1,5 +1,5 @@
-// BACK_URL = "http://127.0.0.1:8000/";
-BACK_URL = "http://3.35.165.192/";
+BACK_URL = "http://127.0.0.1:8000/";
+// BACK_URL = "http://3.35.165.192/";
 
 
 document.getElementById("grade").onmouseover = function () {

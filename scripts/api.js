@@ -1,4 +1,5 @@
-BACK_URL = "http://3.35.165.192/";
+// BACK_URL = "http://3.35.165.192/";
+BACK_URL = "http://127.0.0.1:8000/"
 
 async function login_api() {
   const data = {
@@ -164,6 +165,7 @@ async function detail_modal(id) {
   });
 
   const response_json = await response.json();
+  console.log("이미지 관련 데이터들 ", response_json)
 
   if (response.status === 200) {
     let image = response_json.artimage;
@@ -190,7 +192,7 @@ async function detail_modal(id) {
             <div onclick="detail_buy(${collection_id})" class="detail_buy">
                 ${cost}포인트 바로 구매!
             </div>
-            <div onclick="post_like(${collection_id})" id="detail_like" class="detail_like">
+            <div onclick="post_like(${id})" id="detail_like" class="detail_like">
             <i class="fa-regular fa-heart"></i>
                 <!-- <i class="fa-solid fa-heart"></i> -->
                 ${like.length}
@@ -218,6 +220,7 @@ async function detail_modal(id) {
   document.getElementById("detail_modal").style.display = "flex";
 }
 function post_like(collection_id) {
+  console.log("컬렉션 아이디 ", collection_id )
   const response = fetch(BACK_URL + "post/like/" + collection_id, {
     method: "POST",
     headers: {
