@@ -1,3 +1,5 @@
+BACK_URL = "http://3.35.165.192/";
+
 async function login_api() {
   const data = {
     username: document.getElementById("username").value,

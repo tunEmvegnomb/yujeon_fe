@@ -1,3 +1,5 @@
+BACK_URL = "http://3.35.165.192/";
+
 function login_button_click() {
   document.getElementById("login_modal").style.display = "flex";
 }
@@ -25,7 +27,7 @@ document.getElementById("join_button").onclick = () => {
   document.getElementById("join_modal").style.display = "flex";
 };
 
-BACK_URL = "http://127.0.0.1:8000/";
+
 
 function login_check() {
   const response = fetch(BACK_URL + "user/auth/", {

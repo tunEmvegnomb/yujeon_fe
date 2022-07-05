@@ -1,5 +1,6 @@
 FRONT_URL = "http://127.0.0.1:5500/";
-BACK_URL = "http://127.0.0.1:8000/";
+// BACK_URL = "http://127.0.0.1:8000/";
+BACK_URL = "http://3.35.165.192/";
 
 window.onload = () => {
   const payload = JSON.parse(localStorage.getItem("payload"));
@@ -22,7 +23,7 @@ window.onload = () => {
 
     requestRefreshToken(BACK_URL + "user/api/token/refresh/").then((data) => {
       localStorage.setItem("yujeon_access_token", data.access);
-      window.location.reload();
+      // window.location.reload();
     });
     
   }

@@ -1,3 +1,5 @@
+BACK_URL = "http://3.35.165.192/";
+
 function payload_dat_get() {
   const payload = JSON.parse(localStorage.getItem("payload"));
   const nickname = payload.nickname;
