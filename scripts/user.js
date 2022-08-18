@@ -28,8 +28,6 @@ document.getElementById("join_button").onclick = () => {
   document.getElementById("join_modal").style.display = "flex";
 };
 
-
-
 function login_check() {
   const response = fetch(BACK_URL + "user/auth/", {
     method: "GET",
@@ -44,7 +42,6 @@ function login_check() {
     if (response.status === 200) {
       window.location.replace("/main.html");
     } else if (response.status === 401) {
-      console.log("인증실패");
     }
   });
 }

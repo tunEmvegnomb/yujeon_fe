@@ -6,7 +6,6 @@ window.onload = () => {
   const payload = JSON.parse(localStorage.getItem("payload"));
 
   if (payload.exp < Date.now() / 1000) {
-    console.log(payload.exp)
   } else {
     const requestRefreshToken = async (url) => {
       const response = await fetch(url, {
