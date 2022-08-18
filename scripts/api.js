@@ -165,7 +165,6 @@ async function detail_modal(id) {
   });
 
   const response_json = await response.json();
-  console.log("이미지 관련 데이터들 ", response_json)
 
   if (response.status === 200) {
     let image = response_json.artimage;
@@ -214,13 +213,11 @@ async function detail_modal(id) {
     }
   }
   if (response.status === 400) {
-    console.log("실패");
   }
 
   document.getElementById("detail_modal").style.display = "flex";
 }
 function post_like(collection_id) {
-  console.log("컬렉션 아이디 ", collection_id )
   const response = fetch(BACK_URL + "post/like/" + collection_id, {
     method: "POST",
     headers: {
@@ -278,7 +275,6 @@ async function detail_buy(collection_id) {
 
     if (response.status === 200) {
       alert(response_json.message);
-      console.log(response_json);
       window.location.reload();
     }
     else if (response.status === 400) {

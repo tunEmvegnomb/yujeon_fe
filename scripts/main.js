@@ -67,7 +67,6 @@ function img_upload_submit() {
 function info_submit() {
   let is_exposure = ""
 
-
   if (document.getElementById("is_exposure").checked) {
     is_exposure = document.getElementById("is_exposure").value
   }
@@ -117,7 +116,6 @@ function detail_modal_close() {
 }
 
 function image_upload_enter() {
-  // console.log("hi")
   var keyCode = event.keyCode;
   if (keyCode == 13) {
     image_upload();
@@ -125,7 +123,6 @@ function image_upload_enter() {
 }
 function user_info() {
   let user_info = user_info_get();
-  console.log(user_info)
 }
 function user_collection(){
   window.location.href = "./mypage.html";
@@ -133,7 +130,6 @@ function user_collection(){
 
 function user_profile() {
   let user_profile = get_user_profile();
-  console.log(user_profile)
 }
 
 // user_info()
